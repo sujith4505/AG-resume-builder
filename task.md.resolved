@@ -1,0 +1,35 @@
+# AG Resume Builder Task List
+
+## 1. Project Setup
+- [ ] Initialize React frontend project (Vite) `frontend`
+- [ ] Initialize Node.js/Express backend project `backend`
+- [ ] Configure AG Database connection in backend
+- [ ] Configure Google OAuth 2.0 flow
+
+## 2. Core Architecture & UI Foundation
+- [ ] Create Global State Management (Context API in React)
+- [ ] Implement Theme Switcher (White, Dark, Blue) with CSS variables
+- [ ] Add Particle.js integration for Dark and Blue themes
+- [ ] Build Responsive Layout (Navbar, Footer, Main Container)
+
+## 3. Resume Builder Flow
+- [ ] Create multi-step form infrastructure
+- [ ] Implement Personal Info & Professional Summary steps
+- [ ] Implement Work Experience & Education steps (dynamic arrays)
+- [ ] Implement Technical Skills step
+
+## 4. Resume Templates & Preview
+- [ ] Build live preview component in React
+- [ ] Create base ATS-friendly template matching standard structure
+- [ ] Add customization controls (font size, spacing)
+
+## 5. Advanced Features & Backend APIs
+- [ ] Build Resume Score Checker generic algorithm (API side)
+- [ ] Connect Score Checker to UI
+- [ ] Implement PDF Export feature (html2pdf.js)
+- [ ] Build REST API for saving/loading resumes
+- [ ] Dashboard / History page to view saved resumes from DB
+
+## 6. Final Polish
+- [ ] Mobile responsiveness review
+- [ ] Performance and UX optimization

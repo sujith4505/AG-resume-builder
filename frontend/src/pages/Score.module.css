@@ -1,0 +1,196 @@
+.scoreContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--surface-color);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.checkBtn,
+.recheckBtn {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.checkBtn:hover,
+.recheckBtn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.checkBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.inputMethods {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: stretch;
+}
+
+@media (max-width: 768px) {
+    .inputMethods {
+        flex-direction: column;
+    }
+}
+
+.uploadSection {
+    flex: 1;
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.uploadSection h3 {
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.subtext {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.fileInput {
+    display: none;
+}
+
+.uploadLabel {
+    background: transparent;
+    border: 2px dashed var(--border-color);
+    color: var(--text-main);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.uploadLabel:hover {
+    border-color: var(--primary-color);
+}
+
+.clearBtn {
+    background: transparent;
+    color: #DC2626;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.resultsPanel {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.scoreCircle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 8px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem;
+    background: var(--bg-color);
+}
+
+.scoreNumber {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1;
+}
+
+.scoreText {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.statusLabel {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+}
+
+.feedbackSection {
+    text-align: left;
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.feedbackSection h3 {
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.feedbackList {
+    line-height: 1.8;
+    color: var(--text-main);
+    padding-left: 1.5rem;
+}
+
+.feedbackItem {
+    margin-bottom: 0.5rem;
+    color: #DC2626;
+    /* Always visible red regardless of theme to show it's an error/feedback */
+}
+
+.perfectScore {
+    color: #16A34A;
+    /* Green */
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

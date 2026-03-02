@@ -1,0 +1,49 @@
+# AG Resume Builder Implementation Plan
+
+We are building a production-ready SaaS platform for generating ATS-compliant resumes with intelligent scoring, custom themes, and PDF export.
+
+## Proposed Stack
+- **Frontend Framework:** React (initialized via Vite)
+- **Backend Framework:** Node.js with Express
+- **Styling:** Vanilla CSS / CSS Modules (No Tailwind)
+- **Database:** Default Antigravity (AG) Database
+- **Auth:** Google OAuth 2.0 (via Google Cloud credentials in Node.js)
+- **PDF Generation:** `html2pdf.js` on the client or Puppeteer on the backend
+- **Particles:** `react-tsparticles`
+
+## System Architecture
+
+### 1. Frontend (React)
+- **React Router:** For client-side navigation (`/`, `/build`, `/history`, `/score`, `/templates`).
+- **State Management:** React Context API for global state (Theme, Current Resume Data, Auth Status).
+- **Theme Engine:** CSS Variables injected into `:root` managed by context.
+- **Particle System:** `Particles` component rendered conditionally in the layout wrapper based on the active theme.
+
+### 2. Backend (Node.js/Express)
+- **API Routes:** RESTful endpoints for user management, resume saving/retrieval, and scoring logic.
+- **Auth Flow:** Custom OAuth2 flow using `google-auth-library` or `Passport.js`. Sessions managed via HttpOnly JWT cookies.
+- **Database Adapter:** Integration with the AG database mapping schemas for Users, Resumes, and Scores.
+
+### 3. Database Schema (AG DB)
+- **Users:** `uuid`, `google_id`, `email`, `theme_preference`
+- **Resumes:** `uuid`, `user_id`, `title`, `data_payload` (JSON), `updated_at`
+- **Scores:** `uuid`, `resume_id`, `score`, `feedback_data` (JSON)
+
+## Component Implementation
+
+### UI Components
+- **Layout:** Navbar & Footer encapsulating the main content area.
+- **Builder Wizard:** A multi-step form managing state for Personal, Summary, Experience, Education, and Skills.
+- **Preview:** A live-rendered ATS document component reacting to state changes.
+
+### Scoring Logic
+- **Completeness:** Checks presence of required fields.
+- **Keyword Density:** Cross-references input against a predefined tech/action verb dictionary.
+- **Format:** Evaluates data structure (e.g., bullet point counts).
+
+## Verification Plan
+- **Setup:** Initialize `frontend` (Vite) and `backend` (Express) folders.
+- **Auth:** Test Google login route.
+- **Theming:** Toggle White/Dark/Blue modes and verify Particle.js behavior.
+- **Builder & PDF:** Enter dummy data, verify live preview updates, and test PDF export visually.
+- **Scoring:** Send payload to score API and verify JSON response.

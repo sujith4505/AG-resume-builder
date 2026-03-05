@@ -9,7 +9,7 @@ export default function History() {
         // Simulated fetch from DB
         const fetchResumes = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/resumes');
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/resumes`);
                 const data = await response.json();
                 setResumes(data.resumes || []);
             } catch (err) {

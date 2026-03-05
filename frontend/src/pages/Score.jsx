@@ -17,13 +17,13 @@ export default function Score() {
                 // Handle file upload check
                 const formData = new FormData();
                 formData.append('resumePdf', selectedFile);
-                response = await fetch('http://localhost:5000/api/score/upload', {
+                response = await fetch(`${import.meta.env.VITE_API_URL}/api/score/upload`, {
                     method: 'POST',
                     body: formData
                 });
             } else {
                 // Handle JSON builder data check
-                response = await fetch('http://localhost:5000/api/score/check', {
+                response = await fetch(`${import.meta.env.VITE_API_URL}/api/score/check`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ resumeData })
@@ -39,7 +39,7 @@ export default function Score() {
             }
         } catch (error) {
             console.error('Failed to get score:', error);
-            alert('Failed to connect to the scoring API. Ensure the backend server is running on port 5000.');
+            alert('Failed to connect to the scoring API. Please try again.');
         }
         setLoading(false);
     };

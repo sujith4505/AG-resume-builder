@@ -12,7 +12,13 @@ const resumeRoutes = require('./routes/resumeRoutes');
 const scoreRoutes = require('./routes/scoreRoutes');
 
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://ag-resume-builder.vercel.app'
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 app.get('/api/health', (req, res) => {

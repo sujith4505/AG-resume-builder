@@ -15,7 +15,7 @@ const scoreRoutes = require('./routes/scoreRoutes');
 app.use(cors({
     origin: [
         'http://localhost:5173',
-        'https://ag-resume-builder.vercel.app'
+        'https://ag-resume-builder-2je4.vercel.app'
     ],
     credentials: true
 }));

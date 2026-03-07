@@ -68,7 +68,10 @@ export default function Build() {
                     <button onClick={prevStep} disabled={currentStep === 0} className={styles.btnSecondary}>
                         Back
                     </button>
-                    <button onClick={nextStep} disabled={currentStep === steps.length - 1} className={styles.btnPrimary}>
+                    <button
+                        onClick={currentStep === steps.length - 1 ? handleDownloadPDF : nextStep}
+                        className={styles.btnPrimary}
+                    >
                         {currentStep === steps.length - 1 ? 'Finish' : 'Next'}
                     </button>
                 </div>
